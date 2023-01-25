@@ -1,46 +1,46 @@
 @keyframes moveInLeft {
     0% {
-      opacity: 0;
-      transform: translateX(-10rem);
+        opacity: 0;
+        transform: translateX(-10rem);
     }
-  
+
     80% {
-      transform: translateX(1rem);
+        transform: translateX(1rem);
     }
-  
+
     100% {
-      opacity: 1;
-      transform: translate(0);
+        opacity: 1;
+        transform: translate(0);
     }
-  }
-  
-  @keyframes moveInRight {
+}
+
+@keyframes moveInRight {
     0% {
-      opacity: 0;
-      transform: translateX(10rem);
+        opacity: 0;
+        transform: translateX(10rem);
     }
-  
+
     80% {
-      transform: translateX(-1rem);
+        transform: translateX(-1rem);
     }
-  
+
     100% {
-      opacity: 1;
-      transform: translate(0);
+        opacity: 1;
+        transform: translate(0);
     }
-  }
-  
-  @keyframes moveInBottom {
+}
+
+@keyframes moveInBottom {
     0% {
-      opacity: 0;
-      transform: translateY(3rem);
+        opacity: 0;
+        transform: translateY(3rem);
     }
-  
+
     100% {
-      opacity: 1;
-      transform: translate(0);
+        opacity: 1;
+        transform: translate(0);
     }
-  }
+}
 
 *,
 *::after,
@@ -214,13 +214,14 @@ main {
     color: transparent;
     letter-spacing: .2rem;
     transition: all .2s;
+    margin-bottom: 8rem;
 }
 
 .heading-tertiary {
-  font-size: 1.6rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
 }
 
 .section-about {
@@ -228,7 +229,6 @@ main {
     padding: 25rem 0;
     margin-top: -10vh;
     text-align: center;
-    margin-bottom: 8rem;
 }
 
 .section-features {
@@ -271,4 +271,135 @@ main {
     opacity: 50%;
     height: 100%;
     max-width: 100%;
+}
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 15rem 0 15rem 0;
+  text-align: center;
+}
+
+.card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 52rem;
+}
+
+.card__side {
+    height: 52rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+
+.card__side--front {
+    background-color: #fff;
+}
+
+.card__side--back {
+    transform: rotateY(180deg);
+}
+
+.card__side--back-1 {
+    background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+
+.card__side--back-2 {
+    background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+}
+
+.card__side--back-3 {
+    background-image: linear-gradient(to right bottom, #b129ff, #8043fa);
+}
+
+.card:hover .card__side--front {
+    transform: rotateY(-180deg);
+}
+
+.card:hover .card__side--back {
+    transform: rotateY(0);
+}
+
+.card__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.card__picture--1 {
+    background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../images/Book1-2.png);
+}
+
+.card__picture--2 {
+    background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../images/Book2-2.jpg);
+}
+
+.card__picture--3 {
+    background-image: linear-gradient(to right bottom, #b129ff, #8043fa), url(../images/Book3-2.png);
+}
+
+.card__details {
+    padding: 3rem;
+}
+
+.card__details ul {
+    list-style: none;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.card__details ul li {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.card__details ul li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+.card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+}
+
+.card__price-box {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 8rem;
+}
+
+.card__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.card__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+}
+
+.btn--blue {
+  background-color: #241599;
+  color: #fff;
+  margin-top: 8rem;
+}
+
+.btn--blue::after {
+  background-color: #241599;
 }
