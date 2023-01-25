@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: brown;
+    padding: 10px;
+}
+
+main {
+    margin-top: 20px;
+}
+
+.row {
+    background-color: brown;
+    padding: 10px;
+    margin-top: 10px;
+    height: 37px;
+}
+
+.row [class^="col-"] {
+    background-color: aqua;
+    float: left;
+}
+
+.row [class^="col-"]:not(:last-child) {
+    margin-right: 6rem;
+}
+
+.col-1-of-2 {
+    width: calc((100% - 6rem) / 2);
+}
+
+.col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3);
+}
+
+.col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4);
+}
